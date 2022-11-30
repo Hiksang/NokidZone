@@ -8,8 +8,7 @@ import openpyxl
 data = pd.read_excel('Data.xlsx')
 content = data['content']
 
-test = content[3]
-
+## 불용어 처리를 위한 코드
 punct = "/-'?!.,#$%\'()*+-/:;<=>@[\\]^_`{|}~" + '""“”’' + '∞θ÷α•à−β∅³π‘₹´°£€\×™√²—–&'
 punct_mapping = {"‘": "'", "₹": "e", "´": "'", "°": "", "€": "e", "™": "tm", "√": " sqrt ", "×": "x", "²": "2",
                  "—": "-", "–": "-", "’": "'", "_": "-", "`": "'", '“': '"', '”': '"', '“': '"', "£": "e",
@@ -61,41 +60,17 @@ def clean_str(text):
     text = re.sub('\n', '.', string=text)
     return text
 
-
-a  = clean_punc(test,punct, punct_mapping)
-b = clean_str(a)
-
-print("a" ,a)
-print("*"*10)
-print("b",b)
-print("*"*10)
-print(kss.split_sentences(b)[0])
-print(kss.split_sentences(b)[1])
-print(kss.split_sentences(b)[0], kss.split_sentences(b)[1])
-c = kss.split_sentences(b)[0] + " " +  kss.split_sentences(b)[1]
-# print(kss.split_sentences(a_test))
-# from hanspell
-print(c)
-
-print(" ".join(kss.split_sentences(b)))
-
-from soynlp.normalizer import *
+## 문장 정규화를 위한 코드
+# from soynlp.normalizer import *
 # print(repeat_normalize("안녕하세요 ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ 아 진자 배고파 ㅎㅋㅋㅋㅋㅋㅋ", num_repeats=2))
 
-# from hanspell import spell_checker
-# result = spell_checker.check(b)
-# c = result.as_dict()
-# print(c['checked'])
-# from konlpy.tag import Okt
-# okt = Okt()
-# print(okt.nouns(b))
-# db = pd.DataFrame({'content' :1 ,
-#                    'date' : 2,
-#                    'place' :3 })
 
+## 문장의 불용어와 정규화를 진행
+## kss 패키지를 사용하여 자연스러운 문맥단위의 띄어쓰기가 사용된 문장으로 변
 db = pd.DataFrame(columns=["content", "data", "place"])
 for i in range(len(data)):
     try:
+
         bb = data['date'][i]
         cc = data['place'][i]
         a = clean_punc(data['content'][i], punct, punct_mapping)

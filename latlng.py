@@ -2,23 +2,17 @@ from korean_geocoding.geocoding import KoreanGeocoding as Kg
 import openpyxl
 import time
 
+## NAVER API를 활용하여 주소를 위도 경도로 변환
 kg = Kg()
-kg.set_naver_api("hdfa8f31bk", "3uD3bopOrcTwYjeC6TnLOQxGDqIkwNPPYlhYo4JI") # 발급받은 키를 넣어야 합니다.
-# print(kg.get_coordinates_by_api("서울특별시 종로구 세검정로 430 (평창동,(지하1층)"))
-#
-#
-#
-## 엘셀파일 열기
+kg.set_naver_api("hdfa8f31bk", "3uD3bopOrcTwYjeC6TnLOQxGDqIkwNPPYlhYo4JI")
+
+## place와 주소로 이루어진 last.xlxs load
 filename = "last.xlsx"
 exelFile = openpyxl.load_workbook(filename)
 
-## 시트 설정
+## 주소를 위도와 경도로 변경해주는 코드
 sheet = exelFile.worksheets[0]
-
-
-
 rowCount = 1
-
 for row in sheet.rows:
     try:
         print(row[1].value)
@@ -33,5 +27,5 @@ for row in sheet.rows:
         rowCount = rowCount + 1
         print("error")
 
-
+## nokids.xlsx로 저장
 exelFile.save("nokids.xlsx")
