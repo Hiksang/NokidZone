@@ -1,5 +1,7 @@
 # NokidZone
 
+가천대학교 조사방법론2 프로젝트를 게시
+
 # PYTHON
 
 insta_crawling.ipynb <-   인스타 크롤링(mac)
@@ -20,7 +22,7 @@ twetter_crawling.py <- 트위터 크롤링
 
 twitter_crawling.R <- 트위터 크롤링(R)
 
-#DATA 설명
+# DATA 설명
 
 crawling_blog.csv <- 블로그 크롤링 
 crawling_cafe.csv <- 카페 크롤링
