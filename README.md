@@ -46,3 +46,7 @@ last.xlsx <-  최종 음식점이름(place)과 주소가 있는 데이터
 nokids_latlng.xlsx <- 최종 음식점이름과 주소 위도 경도가 있는 데이터
 
 kakao_map_input.txt <- 카카오맵 api에 필요한 데이터형식으로 변환한 데이터
+
+# SQL
+
+DE.sql <- DE를 위한 쿼리문
