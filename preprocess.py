@@ -83,7 +83,7 @@ for i in range(len(data)):
         print("empty")
 print(db)
 db3 = db.drop_duplicates()
-db3.to_excel("preprocess1.xlsx")
+db3.to_excel("preprocess.xlsx")
 
 
 

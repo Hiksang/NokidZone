@@ -11,9 +11,7 @@ question = "노키즈존인 곳이 어디야?"
 # 전처리된 파일을 Load
 data = pd.read_excel('1_pre.xlsx')
 content = data['content']
-
 test = content[3]
-
 db = pd.DataFrame(columns=["place", "confidence"])
 
 # AI를 활용한 언어처리

@@ -7,7 +7,7 @@ kg = Kg()
 kg.set_naver_api("hdfa8f31bk", "3uD3bopOrcTwYjeC6TnLOQxGDqIkwNPPYlhYo4JI")
 
 ## place와 주소로 이루어진 last.xlxs load
-filename = "last.xlsx"
+filename = "kakao_yes_adr.xlsx"
 exelFile = openpyxl.load_workbook(filename)
 
 ## 주소를 위도와 경도로 변경해주는 코드
