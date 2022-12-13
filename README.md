@@ -51,5 +51,5 @@ kakao_map_input.txt <- 카카오맵 api에 필요한 데이터형식으로 변�
 
 DE.sql <- DE를 위한 쿼리문
 
-# 보고서
+# Rmarkdown 
 <https://hjjooo.github.io/thinkhole/>
